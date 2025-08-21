@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Personal portfolio of KEERTHI S. K" />
+  <meta name="keywords" content="portfolio, full stack, data analyst, frontend" />
+  <title>[KEERTHI S. K] — Portfolio</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
+  <style>
+    /* Typing effect */
+    .typing {
+      border-right: 2px solid #333;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink 0.75s step-end infinite;
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #333 }
+    }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.6s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* About Section */
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .about-container img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #333;
+    }
+    .about-details {
+      flex: 1;
+    }
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .about-highlights .highlight {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Project Flip Cards */
+    .project-card {
+      perspective: 1000px;
+    }
+    .project-inner {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .project-card:hover .project-inner {
+      transform: rotateY(180deg);
+    }
+    .project-front, .project-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .project-front {
+      background: #fff;
+    }
+    .project-back {
+      background: #fafafa;
+      transform: rotateY(180deg);
+    }
+    .project-links a {
+      display: inline-block;
+      margin: 0 5px;
+      padding: 6px 12px;
+      background: #333;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .project-links a:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" aria-label="Primary">
+    <div class="logo">KEERTHI S. K</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" aria-pressed="false" title="Toggle dark mode">🌙</button>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Hi, I'm <span class="name">Keerthi S. K</span></h1>
+        <p class="subtitle typing" id="typing"></p>
+        <p class="lead">
+          Aspiring technology professional skilled in Full-Stack Development, Data Analysis, and Frontend Engineering.
+          Proficient in MERN stack, SQL, and Python, with a passion for building scalable applications,
+          turning data into actionable insights, and delivering user-focused solutions.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn" href="assets/Keerthi S K_resume.pdf" download>Download Resume</a>
+          <a class="btn ghost" href="assets/Keerthi S K_resume.pdf" target="_blank">View Resume</a>
+          <a class="btn ghost" href="#projects">View Projects</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/keerthi.jpg" alt="Portrait of Keerthi S. K" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- About -->
+    <section id="about" class="section reveal">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <img src="assets/keerthi.jpg" alt="Keerthi S. K Profile Photo" />
+        <div class="about-details">
+          <p>
+            I’m <strong>Keerthi S. K</strong>, a passionate Full-Stack Developer, Data Analyst, and Frontend Engineer.
+            Skilled in MERN stack, SQL, and Python, I specialize in building scalable applications and transforming raw data into insights.
+            With hands-on experience in AI-based projects and real-world web applications, I aim to deliver impactful solutions.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight">🌟 3+ Major Projects</div>
+            <div class="highlight">💻 MERN & Python</div>
+            <div class="highlight">📜 Certified in C, Python, Data Analysis</div>
+            <div class="highlight">🔐 Cyber Security Intern</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+<section id="skills" class="section reveal">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <img src="assets/c-logo.png" alt="C" />
+      <h3>C</h3>
+    </div>
+
+    <div class="skill-card">
+      <img src="assets/python-logo.png" alt="Python" />
+      <h3>Python</h3>
+    </div>
+
+    <div class="skill-card">
+      <img src="assets/power bi-logo.png" alt="Power BI" />
+      <h3>Power BI</h3>
+    </div>
+
+    <div class="skill-card">
+      <img src="assets/tableau-logo.png" alt="Tableau" />
+      <h3>Tableau</h3>
+    </div>
+
+    <div class="skill-card">
+      <img src="assets/sql-logo.png" alt="SQL" />
+      <h3>SQL</h3>
+    </div>
+
+    <div class="skill-card">
+      <img src="assets/java-logo.png" alt="Java" />
+      <h3>Java</h3>
+    </div>
+
+    <div class="skill-card">
+      <img src="assets/html-logo.png" alt="HTML" />
+      <h3>HTML</h3>
+    </div>
+
+    <div class="skill-card">
+      <img src="assets/css-logo.png" alt="CSS" />
+      <h3>CSS</h3>
+    </div>
+
+    <div class="skill-card">
+      <img src="assets/mern-logo.png" alt="MERN Stack" />
+      <h3>MERN Stack</h3>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Projects -->
+    <section id="projects" class="section reveal">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-inner">
+            <div class="project-front">
+              <h3>Maintenance Ticket Issue Tracker</h3>
+              <p>Dec 2024</p>
+            </div>
+            <div class="project-back">
+              <p>Logs, tracks, and manages service or maintenance issues for timely resolution.</p>
+              <p><strong>Tech:</strong> HTML, CSS, JS, PHP, SQL, Node.js</p>
+              <div class="project-links">
+                <a href="https://github.com/Keerthisk-30" target="_blank">GitHub</a>
+                <a href="#">Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-inner">
+            <div class="project-front">
+              <h3>Calories Burst Prediction</h3>
+              <p>Apr 2025</p>
+            </div>
+            <div class="project-back">
+              <p>ML system to estimate calories burned. XGBoost gave the most accurate results.</p>
+              <p><strong>Tech:</strong> Python, scikit-learn, XGBoost</p>
+              <div class="project-links">
+                <a href="https://github.com/Keerthisk-30" target="_blank">GitHub</a>
+                <a href="#">Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-inner">
+            <div class="project-front">
+              <h3>Gym Website with Email</h3>
+              <p>Jun 2025</p>
+            </div>
+            <div class="project-back">
+              <p>MERN stack gym website with membership management, workout scheduling, and email contact.</p>
+              <p><strong>Tech:</strong> MERN, Express, Nodemailer</p>
+              <div class="project-links">
+                <a href="https://github.com/Keerthisk-30" target="https://github.com/Keerthisk-30/mern_gym-website">GitHub</a>
+                <a href="#">Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Experience -->
+<section id="experience" class="section reveal">
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Cyber Security Intern</h3>
+        <p><strong>ShadowFox | June 2025</strong></p>
+        <p>Performed open port scanning, directory brute-forcing, and HTTP credential interception using Nmap, Dirsearch, and Wireshark.</p>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+    <!-- Certifications -->
+<section id="certifications" class="section reveal">
+  <h2 class="section-title">Certifications</h2>
+
+  <div class="cert-card">
+    <a href="assets/python-cert.jpg" target="_blank">
+      <img src="assets/python-cert.jpg" alt="Python Programming Certificate" />
+    </a>
+    <h3>Python Programming</h3>
+    <p>Udemy</p>
+  </div>
+
+  <div class="cert-card">
+    <a href="assets/c-programming-cert.jpg" target="_blank">
+      <img src="assets/c-programming-cert.jpg" alt="C Programming Certificate" />
+    </a>
+    <h3>C Programming</h3>
+    <p>Infosys Springboard</p>
+  </div>
+
+  <div class="cert-card">
+    <a href="assets/js-cert.jpg" target="_blank">
+      <img src="assets/js-cert.jpg" alt="JavaScript Bootcamp Certificate" />
+    </a>
+    <h3>JavaScript Bootcamp</h3>
+    <p>Udemy</p>
+  </div>
+
+  <div class="cert-card">
+    <a href="assets/html-cert.jpg" target="_blank">
+      <img src="assets/html-cert.jpg" alt="HTML & CSS Certificate" />
+    </a>
+    <h3>HTML & CSS</h3>
+    <p>Udemy</p>
+  </div>
+
+  <div class="cert-card">
+    <a href="assets/oneroadmap-cert.jpg" target="_blank">
+      <img src="assets/oneroadmap-cert.jpg" alt="Data Analyst Certificate" />
+    </a>
+    <h3>Data Analyst</h3>
+    <p>One Roadmap</p>
+  </div>
+
+  <div class="cert-card">
+    <a href="assets/dataanalysis-cert.jpg" target="_blank">
+      <img src="assets/dataanalysis-cert.jpg" alt="Data Analysis with Python Certificate" />
+    </a>
+    <h3>Data Analysis with Python</h3>
+    <p>Cognitive Class (IBM Developer Skills Network)</p>
+  </div>
+</section>
+
+<!-- =========================
+     Events Attended Section
+========================= -->
+<section id="events" class="section reveal">
+  <h2 class="section-title">Events Attended</h2>
+
+  <div class="events-grid">
+    <div class="event-card">
+      <h3>Bengaluru Tech Summit 2024</h3>
+      <p>
+        Proud to have participated in the 27th Bengaluru Tech Summit 2024, hosted by the Government of Karnataka.
+        The event showcased groundbreaking innovations from leading IT companies and startups across the globe.
+      </p>
+
+      <div class="event-photos">
+        <img src="assets/event1.jpg" alt="Bengaluru Tech Summit 1" class="lightbox-img">
+        <img src="assets/event2.jpg" alt="Bengaluru Tech Summit 2" class="lightbox-img">
+        <img src="assets/event3.jpg" alt="Bengaluru Tech Summit 3" class="lightbox-img">
+        <img src="assets/event4.jpg" alt="Bengaluru Tech Summit 4" class="lightbox-img">
+        <img src="assets/event5.jpg" alt="Bengaluru Tech Summit 5" class="lightbox-img">
+        <img src="assets/event6.jpg" alt="Bengaluru Tech Summit 6" class="lightbox-img">
+        <!-- Add more event photos as needed -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Lightbox Overlay -->
+<div id="lightbox-overlay">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Event Image">
+</div>
+
+    <!-- Contact -->
+<section id="contact" class="section reveal">
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-grid">
+
+    <div class="contact-card">
+      <span class="contact-icon">📧</span>
+      <h3>Email</h3>
+      <p><a href="mailto:keerthisk952@gmail.com">keerthisk952@gmail.com</a></p>
+    </div>
+
+    <div class="contact-card">
+      <span class="contact-icon">💼</span>
+      <h3>LinkedIn</h3>
+      <p><a href="https://www.linkedin.com/in/keerthi-sadashivappa-99513627b" target="_blank">Profile</a></p>
+    </div>
+
+    <div class="contact-card">
+      <span class="contact-icon">🐙</span>
+      <h3>GitHub</h3>
+      <p><a href="https://github.com/Keerthisk-30" target="_blank">Repositories</a></p>
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> KEERTHI S. K. Built with HTML, CSS & JavaScript.</p>
+  </footer>
+
+  <!-- Typing + Scroll Reveal Scripts -->
+  <script>
+    // Typing effect
+    const roles = ["Full-Stack Developer", "Data Analyst", "Frontend Engineer"];
+    let i = 0, j = 0, current = "", isDeleting = false;
+    function typeEffect() {
+      const typing = document.getElementById("typing");
+      if (!typing) return;
+      if (isDeleting) {
+        current = roles[i].substring(0, j--);
+      } else {
+        current = roles[i].substring(0, j++);
+      }
+      typing.textContent = current;
+      if (!isDeleting && j === roles[i].length + 1) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1000);
+        return;
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % roles.length;
+      }
+      setTimeout(typeEffect, isDeleting ? 80 : 120);
+    }
+    typeEffect();
+
+    // Scroll reveal
+    function reveal() {
+      document.querySelectorAll(".reveal").forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 80) {
+          el.classList.add("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", reveal);
+    reveal();
+  </script>
+</body>
+</html>
