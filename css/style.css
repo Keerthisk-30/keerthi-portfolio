@@ -56,15 +56,14 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background 0.3s, color 0.3s;
 }
 
 .logo {
   font-size: 1.4rem;
   font-weight: bold;
-  body.dark .logo {
-  color: #4da6ff;  /* matches headings accent in dark mode */
-}
-
+  color: #333;
+  transition: color 0.3s;
 }
 
 .nav-links {
@@ -76,7 +75,7 @@ a {
 .nav-links a {
   padding: 6px 10px;
   border-radius: 6px;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .nav-links a:hover {
@@ -98,6 +97,7 @@ a {
   align-items: center;
   padding: 80px 10%;
   background: linear-gradient(to right, #f8f8f8, #f0f0f0);
+  transition: background 0.3s, color 0.3s;
 }
 
 .hero-inner {
@@ -162,7 +162,7 @@ a {
   object-fit: cover;
 }
 
-/* About Section (new design) */
+/* ---------- About Section ---------- */
 .about-container {
   display: flex;
   align-items: center;
@@ -178,7 +178,7 @@ a {
 .about-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
+  gap: 2rem;
   margin-top: 1.5rem;
 }
 
@@ -188,44 +188,40 @@ a {
   margin-bottom: 0.5rem;
 }
 
-.about-card h3{
+.about-card h3 {
   margin-bottom: 10px;
   color: #007BFF;
 }
 
+/* Light Mode About Card */
 .about-card {
-  background: #333333;
+  background: #f4f4f4;
+  color: #333;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   width: 250px;
-  transition: background 0.3s ease, color 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Dark Mode Fix */
-body.dark-mode .about-card {
-  background: #2c2c2c;        /* Dark gray */
-  color: #f5f5f5;             /* Light text */
+/* Dark Mode About Card */
+body.dark .about-card {
+  background: #2c2c2c;
+  color: #f5f5f5;
 }
 
-/* Hover Effect (optional) */
 .about-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 /* ---------- Education ---------- */
 #education {
   padding: 50px 20px;
-  background-color: transparent; /* responsive to dark mode */
-  transition: background 0.3s, color 0.3s;
-}
-
-#education h2 {
+  background-color: transparent;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
+  transition: background 0.3s, color 0.3s;
 }
 
 .education-container {
@@ -240,7 +236,7 @@ body.dark-mode .about-card {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
   transition: background 0.3s, color 0.3s;
 }
 
@@ -254,9 +250,18 @@ body.dark-mode .about-card {
   color: #555;
 }
 
-.education-container:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+/* Dark Mode Education */
+body.dark .education-item {
+  background: #2c2c2c;
+  color: #eee;
+}
+
+body.dark .education-item h3 {
+  color: #4da6ff;
+}
+
+body.dark .education-item p {
+  color: #ccc;
 }
 
 /* ---------- Skills ---------- */
@@ -273,7 +278,7 @@ body.dark-mode .about-card {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.3s, color 0.3s;
   width: 100%;
   max-width: 220px;
 }
@@ -294,6 +299,16 @@ body.dark-mode .about-card {
   font-size: 1.1rem;
   font-weight: 600;
   margin-top: 0.5rem;
+}
+
+/* Dark Mode Skills */
+body.dark .skill-card {
+  background: #2c2c2c;
+  color: #eee;
+}
+
+body.dark .skill-card h3 {
+  color: #4da6ff;
 }
 
 /* ---------- Projects ---------- */
@@ -342,6 +357,14 @@ body.dark-mode .about-card {
   transform: rotateY(180deg);
 }
 
+/* Dark Mode Projects */
+body.dark .project-front,
+body.dark .project-back {
+  background: #2c2c2c;
+  color: #eee;
+}
+
+/* Project Links */
 .project-links a {
   display: inline-block;
   margin: 0 5px;
@@ -357,7 +380,7 @@ body.dark-mode .about-card {
   background: #555;
 }
 
-/* ---------- Experience Timeline ---------- */
+/* ---------- Timeline ---------- */
 .timeline {
   position: relative;
   margin: 2rem 0;
@@ -386,10 +409,20 @@ body.dark-mode .about-card {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark .timeline-content {
+  background: #2c2c2c;
+  color: #eee;
 }
 
 .timeline-content h3 {
   margin-bottom: 0.4rem;
+}
+
+body.dark .timeline-content h3 {
+  color: #4da6ff;
 }
 
 /* ---------- Contact ---------- */
@@ -406,7 +439,7 @@ body.dark-mode .about-card {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, background 0.3s, color 0.3s;
 }
 
 .contact-card:hover {
@@ -424,8 +457,13 @@ body.dark-mode .about-card {
   font-weight: 500;
 }
 
-.contact-card a:hover {
-  text-decoration: underline;
+body.dark .contact-card {
+  background: #2c2c2c;
+  color: #eee;
+}
+
+body.dark .contact-card a {
+  color: #4da6ff;
 }
 
 /* ---------- Certifications ---------- */
@@ -460,6 +498,19 @@ body.dark-mode .about-card {
 .cert-card p {
   font-size: 0.9rem;
   color: #666;
+}
+
+body.dark .cert-card {
+  background: #2c2c2c;
+  color: #eee;
+}
+
+body.dark .cert-card h3 {
+  color: #4da6ff;
+}
+
+body.dark .cert-card p {
+  color: #ccc;
 }
 
 /* ---------- Events ---------- */
@@ -511,7 +562,20 @@ body.dark-mode .about-card {
   transform: scale(1.05);
 }
 
-/* ---------- Dark Mode ---------- */
+body.dark .event-card {
+  background: #2c2c2c;
+  color: #eee;
+}
+
+body.dark .event-card h3 {
+  color: #4da6ff;
+}
+
+body.dark .event-card p {
+  color: #ccc;
+}
+
+/* ---------- Dark Mode General ---------- */
 body.dark {
   background-color: #121212;
   color: #eee;
@@ -519,6 +583,10 @@ body.dark {
 
 body.dark .navbar {
   background: #1f1f1f;
+}
+
+body.dark .logo {
+  color: #4da6ff;
 }
 
 body.dark .nav-links a:hover {
@@ -537,35 +605,4 @@ body.dark .hero-ctas .btn {
 body.dark .hero-ctas .btn.ghost {
   border-color: #eee;
   color: #eee;
-}
-
-body.dark .about-highlights .highlight,
-body.dark .skill-card,
-body.dark .project-front,
-body.dark .project-back,
-body.dark .timeline-content,
-body.dark .contact-card,
-body.dark .cert-card,
-body.dark .event-card,
-body.dark .education-item {
-  background: #2c2c2c;
-  color: #eee;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.5);
-}
-
-body.dark .skill-card h3,
-body.dark .timeline-content h3,
-body.dark .cert-card h3,
-body.dark .event-card h3 {
-  color: #4da6ff;
-}
-
-body.dark .education-item h3 {
-  color: #4da6ff;
-}
-
-body.dark .education-item p,
-body.dark .cert-card p,
-body.dark .event-card p {
-  color: #ccc;
 }
