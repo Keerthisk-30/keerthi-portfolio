@@ -61,7 +61,10 @@ a {
 .logo {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #333;
+  body.dark .logo {
+  color: #4da6ff;  /* matches headings accent in dark mode */
+}
+
 }
 
 .nav-links {
@@ -159,39 +162,107 @@ a {
   object-fit: cover;
 }
 
-/* ---------- About ---------- */
+/* About Section (new design) */
 .about-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
-.about-details p {
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
+.about-details {
+  flex: 1;
 }
 
-.about-highlights {
+.about-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
 }
 
-.about-highlights .highlight {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 1rem;
+.about-card .icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.about-card h3{
+  margin-bottom: 10px;
+  color: #007BFF;
+}
+
+.about-card {
+  background: #333333;
+  padding: 20px;
   border-radius: 10px;
   text-align: center;
-  font-weight: 500;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  width: 250px;
+  transition: background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ---------- Skills with Logos (3 per row) ---------- */
+/* Dark Mode Fix */
+body.dark-mode .about-card {
+  background: #2c2c2c;        /* Dark gray */
+  color: #f5f5f5;             /* Light text */
+}
+
+/* Hover Effect (optional) */
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Education ---------- */
+#education {
+  padding: 50px 20px;
+  background-color: transparent; /* responsive to dark mode */
+  transition: background 0.3s, color 0.3s;
+}
+
+#education h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+.education-item h3 {
+  margin-bottom: 10px;
+  color: #007BFF;
+}
+
+.education-item p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.education-container:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ---------- Skills ---------- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* always 3 per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   text-align: center;
   justify-items: center;
@@ -204,7 +275,7 @@ a {
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   width: 100%;
-  max-width: 220px; /* keeps consistent size */
+  max-width: 220px;
 }
 
 .skill-card:hover {
@@ -213,7 +284,7 @@ a {
 }
 
 .skill-card img {
-  width: 90px;   /* larger logos */
+  width: 90px;
   height: 90px;
   margin-bottom: 1rem;
   object-fit: contain;
@@ -223,15 +294,6 @@ a {
   font-size: 1.1rem;
   font-weight: 600;
   margin-top: 0.5rem;
-}
-
-body.dark .skill-card {
-  background: #2c2c2c;
-  border: 1px solid #444;
-}
-
-body.dark .skill-card h3 {
-  color: #eee;
 }
 
 /* ---------- Projects ---------- */
@@ -278,10 +340,6 @@ body.dark .skill-card h3 {
 .project-back {
   background: #f7f7f7;
   transform: rotateY(180deg);
-}
-
-.project-links {
-  margin-top: 0.8rem;
 }
 
 .project-links a {
@@ -334,22 +392,7 @@ body.dark .skill-card h3 {
   margin-bottom: 0.4rem;
 }
 
-body.dark .timeline {
-  border-left: 3px solid #eee;
-}
-
-body.dark .timeline-dot {
-  background: #eee;
-  border: 3px solid #1e1e1e;
-}
-
-body.dark .timeline-content {
-  background: #2c2c2c;
-  color: #eee;
-  border: 1px solid #444;
-}
-
-/* ---------- Contact Section ---------- */
+/* ---------- Contact ---------- */
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -385,17 +428,7 @@ body.dark .timeline-content {
   text-decoration: underline;
 }
 
-body.dark .contact-card {
-  background: #2c2c2c;
-  color: #eee;
-  border: 1px solid #444;
-}
-
-body.dark .contact-card a {
-  color: #eee;
-}
-
-/* ---------- Certifications (Vertical Layout) ---------- */
+/* ---------- Certifications ---------- */
 .cert-card {
   background: #fff;
   padding: 1rem;
@@ -403,7 +436,7 @@ body.dark .contact-card a {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, background 0.3s, color 0.3s;
 }
 
 .cert-card:hover {
@@ -429,9 +462,7 @@ body.dark .contact-card a {
   color: #666;
 }
 
-/* =========================
-   Events Attended Section
-========================= */
+/* ---------- Events ---------- */
 .events-grid {
   display: flex;
   flex-direction: column;
@@ -443,7 +474,7 @@ body.dark .contact-card a {
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s, color 0.3s;
 }
 
 .event-card:hover {
@@ -468,64 +499,73 @@ body.dark .contact-card a {
 }
 
 .event-photos img {
-  width: 120px;         /* small thumbnail size */
+  width: 120px;
   height: 80px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s;
 }
 
 .event-photos img:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-
-/* Dark Mode for Events */
-body.dark .event-card {
-  background: #2c2c2c;
-  color: #eee;
-  border: 1px solid #444;
-}
-
-body.dark .event-photos img {
-  border: 1px solid #555;
-}
-
 
 /* ---------- Dark Mode ---------- */
 body.dark {
-  background: #1e1e1e;
+  background-color: #121212;
   color: #eee;
 }
 
 body.dark .navbar {
-  background: #2a2a2a;
+  background: #1f1f1f;
+}
+
+body.dark .nav-links a:hover {
+  background: #4a4a4a;
 }
 
 body.dark .hero {
-  background: linear-gradient(to right, #2a2a2a, #1e1e1e);
+  background: linear-gradient(to right, #1e1e1e, #2a2a2a);
 }
 
-body.dark .card,
+body.dark .hero-ctas .btn {
+  background: #4a4a4a;
+  color: #fff;
+}
+
+body.dark .hero-ctas .btn.ghost {
+  border-color: #eee;
+  color: #eee;
+}
+
 body.dark .about-highlights .highlight,
+body.dark .skill-card,
 body.dark .project-front,
 body.dark .project-back,
-body.dark .cert-card {
+body.dark .timeline-content,
+body.dark .contact-card,
+body.dark .cert-card,
+body.dark .event-card,
+body.dark .education-item {
   background: #2c2c2c;
   color: #eee;
-  border: 1px solid #444;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.5);
 }
 
-body.dark .project-links a {
-  background: #eee;
-  color: #111;
+body.dark .skill-card h3,
+body.dark .timeline-content h3,
+body.dark .cert-card h3,
+body.dark .event-card h3 {
+  color: #4da6ff;
 }
 
-body.dark .project-links a:hover {
-  background: #ddd;
+body.dark .education-item h3 {
+  color: #4da6ff;
 }
 
-body.dark .section-title::after {
-  background: #eee;
+body.dark .education-item p,
+body.dark .cert-card p,
+body.dark .event-card p {
+  color: #ccc;
 }

@@ -56,6 +56,10 @@
       text-align: center;
       font-weight: bold;
     }
+    .aboutImage {
+      width: 35%;
+    }
+
 
     /* Project Flip Cards */
     .project-card {
@@ -143,26 +147,63 @@
   </header>
 
   <main>
-    <!-- About -->
     <section id="about" class="section reveal">
-      <h2>About Me</h2>
-      <div class="about-container">
-        <img src="assets/keerthi.jpg" alt="Keerthi S. K Profile Photo" />
-        <div class="about-details">
-          <p>
-            I’m <strong>Keerthi S. K</strong>, a passionate Full-Stack Developer, Data Analyst, and Frontend Engineer.
-            Skilled in MERN stack, SQL, and Python, I specialize in building scalable applications and transforming raw data into insights.
-            With hands-on experience in AI-based projects and real-world web applications, I aim to deliver impactful solutions.
-          </p>
-          <div class="about-highlights">
-            <div class="highlight">🌟 3+ Major Projects</div>
-            <div class="highlight">💻 MERN & Python</div>
-            <div class="highlight">📜 Certified in C, Python, Data Analysis</div>
-            <div class="highlight">🔐 Cyber Security Intern</div>
-          </div>
+  <h2>About Me</h2>
+  <div class="about-container">
+    <!-- Left Side Image -->
+    <div class="aboutImage">
+      <img src="assets/aboutImage.png" alt="About Illustration" />
+    </div>
+
+    <!-- Right Side Cards -->
+    <div class="about-details">
+        <div class="about-cards">
+        <div class="about-card">
+          <span class="icon">👨‍💻</span>
+          <h3>Frontend Developer</h3>
+          <p>Building responsive, interactive UI with HTML, CSS, JavaScript, and React.</p>
+        </div>
+        <div class="about-card">
+          <span class="icon">💻</span>
+          <h3>Full Stack Developer</h3>
+          <p>Developing scalable web apps using MERN stack and backend APIs.</p>
+        </div>
+        <div class="about-card">
+          <span class="icon">📊</span>
+          <h3>Data Analyst</h3>
+          <p>Transforming raw data into insights using SQL, Python, and visualization tools to support decision-making.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+    <section id="education">
+  <h2>Education</h2>
+  <div class="education-container">
+    <div class="education-item">
+      <h3>Jain Institute of Technology</h3>
+      <p><strong>Degree:</strong> B.E in Information Science</p>
+      <p><strong>Period:</strong> 2022 – 2026</p>
+      <p><strong>CGPA:</strong> 7.72</p>
+    </div>
+
+    <div class="education-item">
+      <h3>J M J PU College</h3>
+      <p><strong>Level:</strong> Intermediate</p>
+      <p><strong>Period:</strong> 2020 – 2022</p>
+      <p><strong>Percentage:</strong> 82.16%</p>
+    </div>
+
+    <div class="education-item">
+      <h3>Morarji Desai Residential School</h3>
+      <p><strong>Level:</strong> Secondary Education</p>
+      <p><strong>Period:</strong> 2016 – 2020</p>
+      <p><strong>Percentage(class 10th Board):</strong> 75.84%</p>
+    </div>
+  </div>
+</section>
+
 
     <!-- Skills -->
 <section id="skills" class="section reveal">
