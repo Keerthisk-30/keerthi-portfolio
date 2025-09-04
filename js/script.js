@@ -80,6 +80,28 @@ document.querySelectorAll('.lightbox-img').forEach(img => {
   });
 });
 
+// Cert Letter Modal
+const modal = document.getElementById("certModal");
+const certImg = document.getElementById("certImg");
+const closeCert = document.getElementById("closeCert");
+
+document.querySelectorAll(".cert-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    certImg.src = btn.dataset.img;
+    modal.style.display = "flex";
+  });
+});
+
+closeCert.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
 // Close on click of X or overlay background
 lightboxClose.addEventListener('click', () => {
   lightboxOverlay.style.display = 'none';
@@ -89,4 +111,14 @@ lightboxOverlay.addEventListener('click', e => {
   if(e.target === lightboxOverlay) {
     lightboxOverlay.style.display = 'none';
   }
+});
+
+// ============================
+// Mobile Hamburger Menu
+// ============================
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
 });
